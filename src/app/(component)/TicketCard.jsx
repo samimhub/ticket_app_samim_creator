@@ -1,4 +1,4 @@
-import DelectBlock from "./DlectBlock"
+import DelectBlock from "./DelectBlock"
 import PriorityDisplay from "./PriorityDisplay"
 import ProgressDisplay from "./ProgressDisplay"
 import StatusDisplay from "./StatusDisplay"

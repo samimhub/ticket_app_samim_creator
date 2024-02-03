@@ -1,5 +1,6 @@
 "use client"
 
+import axios from "axios";
 import { useState } from "react";
 
 function TicketForm() {
@@ -17,6 +18,12 @@ const handleChange =(e)=>{
 
 }
 
+const handleSubmit = async(e) =>{
+  e.preventDefault();
+  axios.post('/api/Ticket',formData,{
+    "content-type":"application/json",
+  })
+}
 
   const startingTicketData = {
     title:"",
@@ -27,6 +34,14 @@ const handleChange =(e)=>{
     category:"Hardware Problem",
 
   };
+  const categories =[
+    "Hardware Problem",
+    "Software Problem",
+    "Application Problem",
+    "Project Development",
+    "Network Problem"
+
+  ];
   const [formData,setFormData] =useState(startingTicketData)
 
   return (
@@ -59,7 +74,7 @@ const handleChange =(e)=>{
         type="radio"
         onChange={handleChange} 
         value={1}
-        checked={formData.priority == '1'}
+        checked={formData.priority == 1}
         />
         <label>1</label>
         <input 
@@ -68,7 +83,7 @@ const handleChange =(e)=>{
         type="radio"
         onChange={handleChange} 
         value={2}
-        checked={formData.priority == '2'}
+        checked={formData.priority == 2}
         />
          <label>2</label>
         <input 
@@ -77,7 +92,7 @@ const handleChange =(e)=>{
         type="radio"
         onChange={handleChange} 
         value={3}
-        checked={formData.priority == '3'}
+        checked={formData.priority == 3}
         />
          <label>3</label>
         <input 
@@ -86,7 +101,7 @@ const handleChange =(e)=>{
         type="radio"
         onChange={handleChange} 
         value={4}
-        checked={formData.priority == '4'}
+        checked={formData.priority == 4}
         />
          <label>4</label>
         <input 
@@ -95,7 +110,7 @@ const handleChange =(e)=>{
         type="radio"
         onChange={handleChange} 
         value={5}
-        checked={formData.priority == '5'}
+        checked={formData.priority == 5}
         />
          <label>5</label>
          </div>
@@ -110,25 +125,25 @@ const handleChange =(e)=>{
           onChange={handleChange}
          />
          <label>Category</label>
-         <select
-         name="category" 
-         value={formData.category} 
-         onChange={handleChange}
-         >
-         {categories?.map((category,_index)=>(
-          <option key= {_index} value={category}>
-            {category}
-          </option>
-         ))}
-         </select>
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+        >
+          {categories?.map((category, _index) => (
+            <option key={_index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
          <label>Status</label>
          <select name="status" value={formData.status} onChange={handleChange}>
           <option value="not started">not started</option>
           <option value="started">started</option>
           <option value="done">Done</option>
          </select>
-         <input type="submit" className="btn max-w-xs"
-         value={} />
+         <input type="submit" className=" hover:no-underline bg-blue-300 tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md hover:bg-blue-600 transition-colors block "
+         value='Create Ticket' />
       </form>
     </div>
   )
