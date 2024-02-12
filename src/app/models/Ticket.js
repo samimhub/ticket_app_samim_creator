@@ -5,7 +5,7 @@ const ticketSchema =new mongoose.Schema({
     description:String,
     category:String,
     priority:Number,
-    process:Number,
+    progress:Number,
     status:String,
     active:Boolean,
 },

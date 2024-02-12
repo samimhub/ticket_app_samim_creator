@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.jsx", "src/app/layout.jsx", "src/app/TicketPage/[id]/page.jsx", "src/app/api/Tickets/router.ts", "src/app/(component)/TicketForm.jsx", "src/app/(component)/TicketCard.jsx", "src/app/(component)/StatusDisplay.jsx", "src/app/(component)/ProgressDisplay.jsx", "src/app/(component)/PriorityDisplay.jsx", "src/app/(component)/Nav.jsx", "src/app/(component)/DlectBlock.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.jsx", "src/app/layout.tsx", "src/app/TicketPage/[id]/page.jsx", "src/app/api/Tickets/router.js", "src/app/(component)/EditTicketForm.jsx", "src/app/(component)/TicketCard.jsx", "src/app/(component)/StatusDisplay.jsx", "src/app/(component)/ProgressDisplay.jsx", "src/app/(component)/PriorityDisplay.jsx", "src/app/(component)/Nav.jsx", "src/app/(component)/DlectBlock.jsx", "src/app/api/Tickets/route.js"],
   "exclude": ["node_modules"]
 }
