@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { use, useEffect, useState } from "react";
 import TicketCard from "./(component)/TicketCard";
 
 
@@ -18,16 +19,33 @@ const getTickets = async () => {
   }
 };
 
-const Dashboard = async () => {
-  const data = await getTickets();
 
-  // Make sure we have tickets needed for production build.
-  if (!data?.tickets) {
+const Dashboard = () => {
+  const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showTickets,setShowTickets] =useState(false)
+
+  useEffect(() => {
+    const fetchTickets = async () => {
+        const data = await getTickets();
+        setTickets(data?.tickets || []);
+        setShowTickets(true);
+        setTimeout(() => {
+          setLoading(false);
+        },2000);
+    }
+    fetchTickets();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  if (!showTickets) {
+    return <p>Loading tickets...</p>;
+  }
+  if (tickets.length === 0) {
     return <p>No tickets.</p>;
   }
-
-  const tickets = data.tickets;
-
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
   ];

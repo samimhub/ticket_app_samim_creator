@@ -1,4 +1,4 @@
-const StatusDisplay = ({ status }) => {
+const StatusDisplay = ({ status="" }) => {
   const getColor = (status) => {
     let color;
     switch (status.toLowerCase()) {

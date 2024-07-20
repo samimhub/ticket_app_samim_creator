@@ -14,7 +14,7 @@ function DelectBlock({id}) {
   }
   };
   return (
-    <MdDelete className="icon  text-blue-500 hover:cursor-pointer hover:text-red-400"
+    <MdDelete className="w-10 h-8 text-blue-500 hover:cursor-pointer hover:text-red-400"
     onClick={delectTicket}
     />
   )
