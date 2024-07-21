@@ -23,13 +23,11 @@ const getTickets = async () => {
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showTickets,setShowTickets] =useState(false)
 
   useEffect(() => {
     const fetchTickets = async () => {
         const data = await getTickets();
         setTickets(data?.tickets || []);
-        setShowTickets(true);
         setTimeout(() => {
           setLoading(false);
         },2000);
@@ -38,13 +36,11 @@ const Dashboard = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="flex justify-center items-center text-3xl mt-10">Loading...</p>;
   }
-  if (!showTickets) {
-    return <p>Loading tickets...</p>;
-  }
+
   if (tickets.length === 0) {
-    return <p>No tickets.</p>;
+    return <p className="flex justify-center items-center text-3xl mt-10">No tickets.</p>;
   }
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),

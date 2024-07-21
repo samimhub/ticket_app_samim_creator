@@ -1,35 +1,24 @@
 import { TiTick } from "react-icons/ti";
 
-function PriorityDisplay({priority}) {
+function PriorityDisplay({ priority }) {
+
+  console.log("Priority:", priority);
+
+  // Define the number of priority levels
+  const maxPriority = 5;
+  
   return (
     <div className="flex justify-start align-baseline">
-     <TiTick 
-    className={` pr-1 ${
-      priority > 0 ? " text-red-400" : " text-slate-400"
-    }`}
-    />
-     <TiTick 
-    className={` pr-1 ${
-      priority > 1 ? " text-red-400" : " text-slate-400"
-    }`}
-    />
-     <TiTick 
-    className={` pr-1 ${
-      priority > 2 ? " text-red-400" : " text-slate-400"
-    }`}
-    />
-     <TiTick 
-    className={` pr-1 ${
-      priority > 3 ? " text-red-400" : " text-slate-400"
-    }`}
-    />
-     <TiTick 
-    className={` pr-1 ${
-      priority > 4 ? " text-red-400" : " text-slate-400"
-    }`}
-    />
+      {Array.from({ length: maxPriority }, (_, index) => (
+        <TiTick
+          key={index}
+          className={`pr-1 ${
+            priority > index ? "text-red-400" : "text-slate-400"
+          }`}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default PriorityDisplay
+export default PriorityDisplay;
