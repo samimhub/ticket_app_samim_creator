@@ -21,7 +21,6 @@ export async function POST(req) {
     try {
       const body = await req.json();
       const {formData}=body;
-  
       await Ticket.create(formData);
   
       return NextResponse.json({ message: "Ticket Created" }, { status: 201 });

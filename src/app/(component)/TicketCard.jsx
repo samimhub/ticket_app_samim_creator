@@ -45,4 +45,4 @@ const options ={
   )
 }
 
-export default TicketCard
+export default TicketCard;
