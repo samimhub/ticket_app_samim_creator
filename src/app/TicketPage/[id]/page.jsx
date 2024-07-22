@@ -2,7 +2,7 @@ import EditTicketForm from "@/app/(component)/EditTicketForm";
 
 const getTicketById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const res = await fetch(`${apiUrl}/api/Tickets/${id}`, {
       cache: "no-store",
     });
 
