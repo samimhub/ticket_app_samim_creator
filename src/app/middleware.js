@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const allowedOrigins = ['https://quickticket-app-creator.vercel.app/', 'https://quickticket-app-creat-git-d0c3a4-samim-aktars-projects-7c966014.vercel.app/'];
+const allowedOrigins = ['http://localhost:3000/api/Tickets/${id}'];
 
 const corsOptions = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
