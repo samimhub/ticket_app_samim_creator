@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-const allowedOrigins = ['http://localhost:3000/api/Tickets/${id}'];
+const allowedOrigins = ['https://your-domain.com', 'http://localhost:3000'];
 
 const corsOptions = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
@@ -8,11 +8,9 @@ const corsOptions = {
 };
 
 export function middleware(request) {
-  // Check the origin from the request
   const origin = request.headers.get('origin') ?? '';
   const isAllowedOrigin = allowedOrigins.includes(origin);
 
-  // Handle preflighted requests
   const isPreflight = request.method === 'OPTIONS';
 
   if (isPreflight) {
@@ -23,7 +21,6 @@ export function middleware(request) {
     return NextResponse.json({}, { headers: preflightHeaders });
   }
 
-  // Handle simple requests
   const response = NextResponse.next();
 
   if (isAllowedOrigin) {
