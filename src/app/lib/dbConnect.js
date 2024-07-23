@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-MONGODB_URI = "mongodb+srv://samim123:samim@cluster0.kiojarm.mongodb.net/TicketDB";
+ const MONGODB_URI = "mongodb+srv://samim123:samim@cluster0.kiojarm.mongodb.net/TicketDB";
 // Set the timeout value (in milliseconds)
 const timeoutDuration = 30000; // 30 seconds
 
