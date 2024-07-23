@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 
+const MONGODB_URI = "mongodb+srv://samim123:samim@cluster0.kiojarm.mongodb.net/TicketDB";
 // Set the timeout value (in milliseconds)
 const timeoutDuration = 30000; // 30 seconds
 
-if (!process.env.MONGODB_URI) {
+if (!MONGODB_URI) {
   throw new Error(
     "Please define the MONGODB_URI environment variable inside .env.local"
   );
