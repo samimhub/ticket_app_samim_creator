@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const allowedOrigins = [ 'http://localhost:3000'];
+const allowedOrigins = [ 'https://quickticket-creator-app.vercel.app/'];
 
 const corsOptions = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
