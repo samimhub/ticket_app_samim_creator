@@ -12,7 +12,7 @@ function DelectBlock({ id }) {
     });
     
     if (res.ok) {
-        setTickets(tickets.filter(ticket => ticket._id !== id));
+        tickets.filter(ticket => ticket._id !== id)
     }
   };
   return (
