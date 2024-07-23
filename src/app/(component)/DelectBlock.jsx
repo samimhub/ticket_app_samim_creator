@@ -1,10 +1,8 @@
 "use client"
 
-import { useRouter } from "next/navigation";
 import { MdDelete } from "react-icons/md";
 
-function DelectBlock({ id }) {
-  const router = useRouter();
+function DelectBlock({ id ,onDelect}) {
 
   const delectTicket = async () => {
     const res = await fetch(`https://quickticket-creator-app.vercel.app/api/Tickets/${id}`, {
@@ -12,7 +10,7 @@ function DelectBlock({ id }) {
     });
     
     if (res.ok) {
-      router.refresh();
+      onDelect(id);
     }
   };
   return (

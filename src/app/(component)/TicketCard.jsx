@@ -24,7 +24,7 @@ function TicketCard({ ticket,onDelect }) {
       <div className=" flex mb-3">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
-          <DelectBlock id={ticket._id} onDelect={onDelect}/>
+          <DelectBlock  onDelect={onDelect}/>
         </div>
       </div>
       <Link href={`/TicketPage/${ticket._id}`} style={{ display: "contents" }} className="cursor-pointer">
