@@ -10,6 +10,7 @@ function DelectBlock({ id }) {
     const res = await fetch(`https://quickticket-creator-app.vercel.app/api/Tickets/${id}`, {
       method: "DELETE",
     });
+    
     if (res.ok) {
       router.refresh();
     }
