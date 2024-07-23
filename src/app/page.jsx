@@ -35,10 +35,6 @@ const Dashboard = () => {
     fetchTickets();
   }, []);
 
-  const handleDelete = (id) => {
-    setTickets(tickets.filter(ticket => ticket.id !== id));
-  };
-
   if (loading) {
     return <p className="flex justify-center items-center text-3xl mt-10">Loading...</p>;
   }
@@ -65,7 +61,6 @@ const Dashboard = () => {
                       id={_index}
                       key={_index}
                       ticket={filteredTicket}
-                      onDelect={handleDelete}
                     />
                   ))}
               </div>

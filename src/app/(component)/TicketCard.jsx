@@ -5,7 +5,7 @@ import ProgressDisplay from "./ProgressDisplay"
 import StatusDisplay from "./StatusDisplay"
 
 
-function TicketCard({ ticket,onDelect }) {
+function TicketCard({ ticket }) {
   const formatTimestamp = (timestamp) => {
     const options = {
       year: "numeric",
@@ -24,7 +24,7 @@ function TicketCard({ ticket,onDelect }) {
       <div className=" flex mb-3">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
-          <DelectBlock id={ticket._id} onDelect={onDelect}/>
+          <DelectBlock id={ticket._id} />
         </div>
       </div>
       <Link href={`/TicketPage/${ticket._id}`} style={{ display: "contents" }} className="cursor-pointer">
