@@ -8,14 +8,14 @@ function Nav() {
     <nav className="flex justify-between bg-nav p-4">
       <div className="flex items-center space-x-10">
         <Link href='/'>
-        <IoHomeOutline className="w-12 h-8"/>
+          <IoHomeOutline className="w-12 h-8" />
         </Link>
         <Link href='/TicketPage/new'>
-        <FaTicketAlt className="w-12 h-8"/>
+          <FaTicketAlt className="w-12 h-8" />
         </Link>
       </div>
       <div className="text-xl ">
-      samim@gmail.com
+        samim@gmail.com
       </div>
     </nav>
   )
